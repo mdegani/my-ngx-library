@@ -1,0 +1,19 @@
+{
+  "generator-ngx-library": {
+    "authorName": "Sumit Arora",
+    "authorEmail": "er.sumitarora@gmail.com",
+    "githubUsername": "sumitarora",
+    "projectName": "my-ngx-library",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Angular library built with ❤ using ngx-library yeoman generator.",
+    "projectKeywords": [],
+    "moduleName": "my-ng-module",
+    "ngVersion": "4.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "useGreenkeeper": true,
+    "useCompodoc": true
+  }
+}
