@@ -1,7 +1,7 @@
 {
   "name": "my-ngx-library",
   "description": "Angular library built with ❤ using ngx-library yeoman generator.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "filename": "./src/my-ngx-library.js",
   "homepage": "http://github.com/sumitarora/my-ngx-library",
   "author": {
