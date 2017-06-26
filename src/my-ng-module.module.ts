@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EmptyTextDirective } from './empty-text.directive';
-import { EmptyTextService } from './empty-text.service';
+import { EmptyTextDirective } from './directives';
+import { EmptyTextService } from './services';
 
 // add your angular components here (directives, components, filters, pipes ...)
 export const MY_NG_COMPONENTS = [EmptyTextDirective];

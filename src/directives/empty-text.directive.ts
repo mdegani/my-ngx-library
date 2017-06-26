@@ -1,5 +1,5 @@
 import { Directive, ElementRef, AfterViewInit } from '@angular/core';
-import { EmptyTextService } from './empty-text.service';
+import { EmptyTextService } from '../services';
 
 @Directive({ selector: '[emptytext]' })
 export class EmptyTextDirective implements AfterViewInit {
