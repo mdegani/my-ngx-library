@@ -4,19 +4,19 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { HomeComponent } from './home.component';
-import { MyNgModuleModule } from 'my-ngx-library';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [MyNgModuleModule.forRoot()],
-      declarations: [HomeComponent]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [],
+        declarations: [HomeComponent]
+      }).compileComponents();
     })
-      .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);

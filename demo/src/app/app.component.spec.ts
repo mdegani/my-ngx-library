@@ -5,30 +5,24 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { AppSharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing';
-import { MyNgModuleModule } from 'my-ngx-library';
 
 describe('App: my-ngx-library', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        AppSharedModule,
-        AppRoutingModule,
-        MyNgModuleModule.forRoot()],
-      declarations: [
-        AppComponent,
-        GettingStartedComponent,
-        HomeComponent],
+      imports: [AppSharedModule, AppRoutingModule],
+      declarations: [AppComponent, HomeComponent],
       providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     });
   });
 
-  it('should create the app', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-
+  it(
+    'should create the app',
+    async(() => {
+      let fixture = TestBed.createComponent(AppComponent);
+      let app = fixture.debugElement.componentInstance;
+      expect(app).toBeTruthy();
+    })
+  );
 });
