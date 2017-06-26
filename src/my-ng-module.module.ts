@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { EmptyTextDirective } from './directives';
 import { EmptyTextService } from './services';
+import { HelloComponent } from './components';
 
 // add your angular components here (directives, components, filters, pipes ...)
-export const MY_NG_COMPONENTS = [EmptyTextDirective];
+export const MY_NG_COMPONENTS = [HelloComponent, EmptyTextDirective];
 
 // add your services here
 const MY_SERVICES = [EmptyTextService];
