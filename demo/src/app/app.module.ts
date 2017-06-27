@@ -10,8 +10,10 @@ import { HomeComponent } from './home/home.component';
 
 import { MyNgModuleModule } from 'my-ngx-library';
 
+import { MatrixDemoComponent } from './matrix-demo/matrix-demo.component';
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, MatrixDemoComponent],
   imports: [
     BrowserModule,
     FormsModule,
