@@ -110,32 +110,32 @@ export class ExampleData {
     }];
   }
 
-  // .map(ml1 => {
-  //     return {
-  //       type: Object.keys(ml1)[0],
-  //       typeValue: ml1[Object.keys(ml1)[0]],
-  //       data: this.getData(ml1)
-  //     };
-  //   })
 
-  static getData(ml2) {
-    return ml2.data.map(ml3 => {
-      if (Object.keys(ml3)[0] !== 'duration') {  // need a better condition here
+  // assumptions:
+  // first property is the type (object.keys(ob)[0])
+
+
+  static getData(md, audit = '') {
+    return md.map(md1 => {
+      if (!md1.data[0].hasOwnProperty('value')) {
+        // audit += md1[Object.keys(md1)[0]] + ', ';
+        // audit += md1[Object.keys(md1)[0]] + ', ';
         return {
-          type: Object.keys(ml3)[0],
-          typeValue: ml3[Object.keys(ml3)[0]],
-          data: this.getData(ml3)
+          type: Object.keys(md1)[0],
+          typeValue: md1[Object.keys(md1)[0]],
+          data: this.getData(md1.data, audit += md1[Object.keys(md1)[0]] + ', ')
         };
       }
+
       return {
-        type: Object.keys(ml3)[0],
-        typeValue: ml3[Object.keys(ml3)[0]],
-        value: ml3.data.map(ml4 => {
+        type: Object.keys(md1)[0],
+        typeValue: md1[Object.keys(md1)[0]],
+        value: md1.data.map(md2 => {
           return {
-            key: ml4.date,
+            key: md2.date,
             value: {
-              value: ml4.value.value,
-              name: `audit`
+              value: md2.value.value,
+              name: audit
             }
           };
         })
@@ -144,7 +144,7 @@ export class ExampleData {
   }
 
   static matrixExampleSource() {
-    return [
+    const x = [
       {
         currency: 'USD',
         data: [{
@@ -232,12 +232,16 @@ export class ExampleData {
           }]
         }]
       }
-    ].map(ml1 => {
-      return {
-        type: Object.keys(ml1)[0],
-        typeValue: ml1[Object.keys(ml1)[0]],
-        data: this.getData(ml1)
-      };
-    });
+    ];
+
+    return this.getData(x);
+
+    // .map(ml1 => {
+    //   return {
+    //     type: Object.keys(ml1)[0],
+    //     typeValue: ml1[Object.keys(ml1)[0]],
+    //     data: this.getData(ml1)
+    //   };
+    // });
   }
 }
