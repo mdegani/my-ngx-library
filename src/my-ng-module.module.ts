@@ -14,10 +14,8 @@ const MY_SERVICES = [EmptyTextService];
 
 @NgModule({
   imports: [CommonModule],
-  exports: [EmptyTextDirective,
-    MatrixComponent],
-  declarations: [EmptyTextDirective,
-    MatrixComponent]
+  exports: MY_NG_COMPONENTS,
+  declarations: MY_NG_COMPONENTS
 })
 export class MyNgModuleModule {
   static forRoot(): ModuleWithProviders {
