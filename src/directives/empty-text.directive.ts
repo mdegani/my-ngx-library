@@ -8,7 +8,7 @@ export class EmptyTextDirective implements AfterViewInit {
   ngAfterViewInit() {
     let content: string = this.el.nativeElement.innerHTML;
     if (!content) {
-      //if there is no content,show message getting from EmptyTextService
+      // if there is no content,show message getting from EmptyTextService
       this.el.nativeElement.innerHTML = this.empservice.get();
     }
   }
